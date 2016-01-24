@@ -1,0 +1,21 @@
+{
+  "name": "photogallery",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Nikolay Gromov <nicothin@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nicothin/photogallery",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fotorama": "^4.6.4"
+  }
+}

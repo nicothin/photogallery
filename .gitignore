@@ -1,0 +1,17 @@
+app/assets/js/bower.js
+build/
+
+.Saved/
+_arc/
+bower_components/
+node_modules/
+.DS_Store
+*.log
+*.sublime-*
+*.rar
+*.txt
+*.zip
+.idea
+.ftppass
+ex_files
+Thumbs.db
