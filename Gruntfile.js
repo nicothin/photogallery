@@ -22,7 +22,7 @@ filesList.forEach(function(item) {
   }
 });
 
-photoHTML = '<div class="fotorama" data-nav="thumbs" data-thumbwidth="100" data-thumbheight="100">'+photoHTML+'</div>';
+photoHTML = '<div class="fotorama" data-width="100%" data-maxwidth="1000" data-nav="thumbs" data-thumbwidth="100" data-thumbheight="100" data-allowfullscreen="true" data-fit="scaledown" data-hash="true" data-loop="true" data-keyboard="true">'+photoHTML+'</div>';
 // console.log(photoHTML);
 
 
