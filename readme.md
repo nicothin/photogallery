@@ -13,6 +13,17 @@
 3. Хостинг с FTP.
 
 
+Для корректной работы механизма изменения размера изображений, перед установкой нужно поставить [GraphicsMagick](http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/).
+
+
+
+## Как это работает
+
+При запуске `grunt build` происходит следующее:
+
+- 
+
+
 
 ## Настройки
 

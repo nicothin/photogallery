@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "fotorama": "^4.6.4"
+    "fotorama": "^4.6.4",
+    "normalize-css": "normalize.css#~3.0.3"
   }
 }

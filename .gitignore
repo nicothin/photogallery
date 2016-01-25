@@ -1,4 +1,6 @@
 app/assets/js/bower.js
+app/photo/*.jpg
+app/photo/*.jpeg
 build/
 
 .Saved/
