@@ -1,3 +1,32 @@
+// -----------------------------------------------------------------------------
+// Получим список файлов фотографий
+// -----------------------------------------------------------------------------
+var fs = require('fs'),
+    dir = 'app/photo/';
+
+var filesList = fs.readdirSync(dir),
+    photoHTML = '',
+    re = /\.md$/;
+
+// Сформируем массив файлов, самые новые сверху
+filesList.sort(function(a, b) {
+  return fs.statSync(dir + a).mtime.getTime() -
+         fs.statSync(dir + b).mtime.getTime();
+}).reverse();
+// console.log(filesList);
+
+// Обойдём массив и сделаем из него разметку для фоторамы
+filesList.forEach(function(item) {
+  if (!re.test( item ) ) {
+    photoHTML += '<a href="/photo/'+item+'"><img src="/photo_thubms/'+item+'"></a>';
+  }
+});
+
+photoHTML = '<div class="fotorama" data-nav="thumbs" data-thumbwidth="100" data-thumbheight="100">'+photoHTML+'</div>';
+// console.log(photoHTML);
+
+
+
 module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
@@ -103,6 +132,22 @@ module.exports = function(grunt) {
             {
               match: /\sid=\"-\"/g,
               replacement: ''
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            src: ['build/*.html']
+          }
+        ]
+      },
+      insert_gallery: {
+        options: {
+          patterns: [
+            {
+              match: /@gallery@/g,
+              replacement: photoHTML
             }
           ]
         },
@@ -295,6 +340,7 @@ module.exports = function(grunt) {
     'markdown',
     'htmlmin',
     'replace:html_clean',
+    'replace:insert_gallery',
   ]);
 
   grunt.registerTask('js', [
